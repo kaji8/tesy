@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>課題7</title>
+    <!--  <link rel="stylesheet" href="../html5reset-1.6.1.css">-->
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+      @keyframes smallToBig {
+        0% {
+          width:100px;
+          height: 100px;
+          background-color: rebeccapurple;
+        }
+        100% {
+          width:300px;
+          height: 300px;
+          background-color: papayawhip;
+          transform: scale(1.5,1.5);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity:0;
+        }
+        to {
+          opacity:1;
+        }
+      }
+      button{
+        background-color: green;
+      }
+      .box{
+      margin: 200px;
+        height: 100px;
+        width: 100px;
+        background-color: tomato;
+
+      }
+      p{
+        text-align: center;
+        line-height: 300px;
+        opacity: 0;
+      }
+      .box2{
+        animation: smallToBig 1s forwards;
+/*        animation-duration: 1s;*/
+/*        animation-iteration-count:infinite;*/
+/*        animation-direction:alternate;*/
+/*        animation-fill-mode: forwards;*/
+      }
+      .p2{
+        animation: fadeIn 1s 2s forwards;
+      }
+    </style>
+  </head>
+  <body>
+   <button>button</button>
+    <div class="box"><p>Anim</p></div>
+    <script>
+      $(function(){
+        //処理内容
+        $('button').click(function(){
+          $('.box').toggleClass('box2');
+          $('p').toggleClass('p2');
+        });
+      });
+    </script>
+  </body>
+</html>
